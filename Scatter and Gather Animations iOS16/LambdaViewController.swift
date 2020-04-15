@@ -34,27 +34,28 @@ class LambdaViewController: UIViewController {
             self.lambdaImage.alpha = 1
         }
         for letter in self.lambdaLetters {
-                letter.backgroundColor = UIColor(red: CGFloat.random(in: 0...1), green: CGFloat.random(in: 0...1), blue: CGFloat.random(in: 0...1), alpha: CGFloat.random(in: 0.7...1))
-            }
-            
-            for letter in self.lambdaLetters {
-                letter.textColor = UIColor(red: CGFloat.random(in: 0...1), green: CGFloat.random(in: 0...1), blue: CGFloat.random(in: 0...1), alpha: CGFloat.random(in: 0.7...1))
-            }
+            letter.backgroundColor = UIColor(red: CGFloat.random(in: 0...1), green: CGFloat.random(in: 0...1), blue: CGFloat.random(in: 0...1), alpha: CGFloat.random(in: 0.7...1))
         }
+        
+        for letter in self.lambdaLetters {
+            letter.textColor = UIColor(red: CGFloat.random(in: 0...1), green: CGFloat.random(in: 0...1), blue: CGFloat.random(in: 0...1), alpha: CGFloat.random(in: 0.7...1))
+        }
+        
+        for letter in self.lambdaLetters {
+            letter.center.x = CGFloat.random(in: 0..<view.bounds.size.width/1.5)
+            letter.center.y = CGFloat.random(in: 0..<view.bounds.height/1.5)
+        }
+        
+    }
+
+    
+    //scattered view and gathered view for the toggle
+    //pick a color, background color, position and rotation and animate
+    
+    
     
     @IBAction func toggleButtonPressed(_ sender: UIBarButtonItem) {
         startAnimations()
         
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
